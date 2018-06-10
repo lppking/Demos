@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./core/index.js"></script>
+</head>
+<body>
+  <script>
+    const emmitter = new EventEmeitter();
+    
+    // 监听hello事件，并设置回调方法
+    emmitter.on('hello', (people) => {
+      console.log(`Hello, ${people}`);
+    });
+
+    // emmitter.on('hello', (people) => {
+    //   console.log(`Hi, ${people}`);
+    // });
+
+    emmitter.on('hello', (people) => {
+      console.log(`Hi Hello, ${people}`);
+    });
+
+    emmitter.on('hello', function sayHello () {
+      console.log('This is a named function');
+    });
+
+    emmitter.showEvents();
+    // 触发hello方法
+    emmitter.emit('hello', 'lipengpeng');
+    emmitter.remove('hello', 'sayHello');
+    emmitter.emit('hello', 'lipengpeng');
+  </script>
+</body>
+</html>

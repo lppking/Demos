@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./core/index.js"></script>
+</head>
+<body>
+  <a href="/red">红色</a>
+  <a href="/green">绿色</a>
+  <a href="/blue">蓝色</a>
+
+  <script>
+    const route = new Routes();
+    route.add('/red', function () {
+      changeBgColor('red');
+    });
+    route.add('/green', function () {
+      changeBgColor('green');
+    });
+    route.add('/blue', function () {
+      changeBgColor('blue');
+    });
+
+    let tag = document.getElementsByTagName('a');
+    for (let i = 0, len = tag.length; i < len; i++) {
+      const el = tag[i];
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        route.go(e.target.getAttribute('href'));
+      });
+    }
+
+    function changeBgColor (color) {
+      document.body.style.backgroundColor = color;
+    }
+  </script>
+</body>
+</html>
