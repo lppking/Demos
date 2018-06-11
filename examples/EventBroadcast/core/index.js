@@ -1,6 +1,6 @@
 // import { verifyMaxListeners } from "../utils"
 
-class EventEmeitter {
+class EventBroadcast {
   constructor () {
     this._events = this._events || new Map();
     this._maxListeners = this._maxListeners || 2;

@@ -30,22 +30,12 @@ class Routes {
     return true;
   }
 
-  // init (path) {
-  //   this._history.replaceState({
-  //     path
-  //   }, null, path);
-
-  //   // 触发回调
-  //   this._runCallBack(path);
-  // }
-
   go (path) {
-    this._history.pushState({
-      path
-    }, null, path);
-
-    // 触发回调
-    this._runCallBack(path);
+    if (this._runCallBack(path)) {
+      this._history.pushState({
+        path
+      }, null, path);
+    }
   }
 
   /**
@@ -61,7 +51,9 @@ class Routes {
   _runCallBack (path) {
     if (this._routes.has(path)) {
       this._routes.get(path)();
+      return true;
     }
+    return false;
   }
 
   /**

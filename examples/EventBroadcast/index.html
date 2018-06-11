@@ -9,7 +9,7 @@
 </head>
 <body>
   <script>
-    const emmitter = new EventEmeitter();
+    const emmitter = new EventBroadcast();
     
     // 监听hello事件，并设置回调方法
     emmitter.on('hello', (people) => {
@@ -20,9 +20,9 @@
     //   console.log(`Hi, ${people}`);
     // });
 
-    emmitter.on('hello', (people) => {
-      console.log(`Hi Hello, ${people}`);
-    });
+    // emmitter.on('hello', (people) => {
+    //   console.log(`Hi Hello, ${people}`);
+    // });
 
     emmitter.on('hello', function sayHello () {
       console.log('This is a named function');
