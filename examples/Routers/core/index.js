@@ -3,7 +3,7 @@
  * .back: 返回上一页
  * .forward: 前往下一页
  * .go: 以当前页为0，-n返回前n页，n前往后n页
- * .pushState: 会触发popState
+ * .pushState
  * .replaceState
  */
 class Routes {
