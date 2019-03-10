@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>使用Flex实现三栏布局</title>
+</head>
+<style>
+  .flex-box {
+    width: 100%;
+    height: 300px;
+    background-color: bisque;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .flex-items {
+    height: 200px;
+    background-color: cadetblue;
+    margin: 10px;
+  }
+  .flex-items.side {
+    flex-grow: 0;
+    width: 20%;
+  }
+  .flex-items.center {
+    flex-grow: 1;
+  }
+</style>
+<body>
+  <div class="flex-box">
+    <div class="flex-items side"></div>
+    <div class="flex-items center"></div>
+    <div class="flex-items side"></div>
+  </div>
+</body>
+</html>
